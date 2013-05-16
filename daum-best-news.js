@@ -3,6 +3,9 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 var step =require('step');
 
+var writefile =require('./writefile');
+
+
 step(
 
 	function readUrl(){
@@ -35,7 +38,7 @@ step(
 
 		data = data.join("\n");
 
-	    fs.writeFile('news-title.txt', data, this);
+	    writefile.save('news-title.txt', data, this);
 	},
 	function done(err, data){
 
